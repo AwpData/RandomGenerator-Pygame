@@ -1,6 +1,6 @@
 """                                                                                
 RNG/PYGAME - PROGRAM (V 7.1)
-By: Trevor Tang
+By: AwpData
 Description: Just a bunch of simulations I made (Pygame Released!)
 """
 #                                                                                                                            #
