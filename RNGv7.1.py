@@ -1105,7 +1105,7 @@ elif program == "pygame":
                 programstart = input("Type go to play again. Or back to go to the menu. Or quit to quit the program: ")
                 
         elif gamechose == 2:
-            print("My name is Trevor Tang. I am a 9th grader at Sammamish High School")
+            print("I am AwpData. I am a High School programming student.")
             print("These series of codes are programs I wrote myself")
             print("They all showcase my skills with the random/pygame library")
             print("There are more than 1,100 LINES IN THIS CODE!")
