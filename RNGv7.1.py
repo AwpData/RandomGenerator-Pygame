@@ -1,6 +1,6 @@
 """                                                                                
 RNG/PYGAME - PROGRAM (V 7.1)
-By: AwpData
+By: Trevor Tang
 Description: Just a bunch of simulations I made (Pygame Released!)
 """
 #                                                                                                                            #
@@ -10,6 +10,7 @@ Description: Just a bunch of simulations I made (Pygame Released!)
 #                                                                                                                            #
 import random
 import pygame
+
 pygame.init()
 program = input("Which program would you like to try? (pygame, random): ")
 
@@ -39,7 +40,7 @@ if program == "random":
         print("")
         gamechose = int(input("Please enter the number of the generator you would like to try: "))
         print("")
-        
+
         if gamechose == 1:
             print("The random number generator is set to whatever numbers you want")
             programstart = input("Type list to start: ")
@@ -49,34 +50,36 @@ if program == "random":
                 randommax = int(input("What is the maximum number: "))
                 numberlist = int(input("How many numbers would you like to generate? (Up to 1000): "))
                 print("")
-                if numberlist > 0 and numberlist < 1001 :
-                    while numberlist > 0 and numberlist < 1001:
+                if 0 < numberlist < 1001:
+                    while 0 < numberlist < 1001:
                         randomnum_gen = random.randint(randommin, randommax)
                         print(randomnum_gen)
                         numberlist -= 1
                 else:
                     print("Error: Please enter a number within the desired range")
                 print("")
-                programstart = input("Want to generate more? Type list. Want to go back to the menu? Type back. If not, type quit: ")
-        
+                programstart = input(
+                    "Want to generate more? Type list. Want to go back to the menu? Type back. If not, type quit: ")
+
         elif gamechose == 2:
             print("The sequence random number generator will generate a random set of numbers in a list")
             programstart = input("Type list to start: ")
             while programstart == "list":
-                print("")     
+                print("")
                 numberseq = int(input("How many numbers would you like to generate? (Up to 10000): "))
                 print("")
-                if numberseq > 0 and numberseq < 10001:
-                    while numberseq > 0 and numberseq < 100001:
+                if 0 < numberseq < 10001:
+                    while 0 < numberseq < 100001:
                         randomnum_gen = random.randint(1, 1000000000000)
                         print(randomnum_gen)
                         numberseq -= 1
-                        
+
                 else:
                     print("Error: Please enter a number within the desired range")
                 print("")
-                programstart = input("Want to generate more? Type list! Want to go back to the menu? Type back. If not, type quit: ")
-                
+                programstart = input(
+                    "Want to generate more? Type list! Want to go back to the menu? Type back. If not, type quit: ")
+
         elif gamechose == 3:
             print("The random binary code sequence will create a random binary code sequence in a column")
             programstart = input("Type list to start: ")
@@ -84,16 +87,17 @@ if program == "random":
                 print("")
                 binaryrand = int(input("How many different numbers would you like to generate? (Min: 8; Max: 80): "))
                 print("")
-                if binaryrand > 0 and binaryrand < 1001:
-                    while binaryrand > 0 and binaryrand < 1001:
+                if 0 < binaryrand < 1001:
+                    while 0 < binaryrand < 1001:
                         randomnum_gen = random.randint(0, 1)
                         print(randomnum_gen)
                         binaryrand -= 1
                 else:
                     print("Error: Please enter a number within the desired range")
                 print("")
-                programstart = input("Want to generate more? Type list! Want to go back to the menu? Type back. If not, type quit: ")
-        
+                programstart = input(
+                    "Want to generate more? Type list! Want to go back to the menu? Type back. If not, type quit: ")
+
         elif gamechose == 4:
             print("This category branches into 2 subsections")
             chose = input("Do you want to draw numbers or guess numbers? (draw,guess): ")
@@ -101,12 +105,16 @@ if program == "random":
                 print("")
                 print("This is a randomly generated lucky number simulator")
                 print("If the number is chosen a message is shown")
-                print("Until you get the randomly chosen lucky number or the first or last number which are considered lucky (10,000, 100,000, and 1 mil only) the program will keep going")
+                print(
+                    "Until you get the randomly chosen lucky number or the first or last number which are considered "
+                    "lucky (10,000, 100,000, and 1 mil only) the program will keep going")
                 print("")
                 programstart = input("Type draw to start: ")
                 while programstart == "draw":
                     print("")
-                    amount = int(input("Would you like to draw up to the number 10, 100, 1,000, 10,000, 100,000*, or 1,000,000* numbers? *NOT RECOMMENDED "))
+                    amount = int(input(
+                        "Would you like to draw up to the number 10, 100, 1,000, 10,000, 100,000*, or 1,000,"
+                        "000* numbers? *NOT RECOMMENDED "))
                     if amount == 10:
                         randnum = 0
                         randadd = 0
@@ -130,7 +138,7 @@ if program == "random":
                         while randnum != luckynum:
                             randnum = random.randint(1, 1000)
                             print(randnum)
-                            randadd += 1   
+                            randadd += 1
                     elif amount == 10000:
                         randnum = 0
                         randadd = 0
@@ -144,7 +152,7 @@ if program == "random":
                                 break
                             elif randnum == 10000:
                                 print("You got 10,000!")
-                                break   
+                                break
                     elif amount == 100000:
                         randnum = 0
                         randadd = 0
@@ -158,7 +166,7 @@ if program == "random":
                                 break
                             elif randnum == 100000:
                                 print("You got 100,000!")
-                                break 
+                                break
                     elif amount == 1000000:
                         randnum = 0
                         randadd = 0
@@ -172,7 +180,7 @@ if program == "random":
                                 break
                             elif randnum == 1000000:
                                 print("You got 1,000,000!")
-                                break 
+                                break
                     else:
                         print("Error: Number is not one of the number choses")
                     print("")
@@ -180,7 +188,8 @@ if program == "random":
                     print("The lucky number was " + str(luckynum))
                     print("The computer had to draw " + str(randadd) + " numbers")
                     print("")
-                    programstart = input("Want to play again? Type draw. Want to go back to the menu? Type back. If not, type quit: ")
+                    programstart = input(
+                        "Want to play again? Type draw. Want to go back to the menu? Type back. If not, type quit: ")
             elif chose == "guess":
                 print("")
                 print("This game has you trying to guess the lucky number")
@@ -239,15 +248,21 @@ if program == "random":
                     print("")
                     print("The lucky number was: " + str(luckynum))
                     print("")
-                    programstart = input("If you want to play again type start! Want to go back to the menu? Type back. If not, type quit: ")
-                    
+                    programstart = input(
+                        "If you want to play again type start! Want to go back to the menu? Type back. If not, "
+                        "type quit: ")
+
         elif gamechose == 5:
             print("This is a giveaway simulator")
-            print("You can choose between a set BASIC giveaway where you join or a random ADVANCED giveaway where you create or join a giveaway")
+            print(
+                "You can choose between a set BASIC giveaway where you join or a random ADVANCED giveaway where you "
+                "create or join a giveaway")
             chose = input("Which simulator would you like to try? (odds, random): ")
             if chose == "odds":
                 print("")
-                print("This simulator will put you into a random giveaway and you get to see how likely you are going to win")
+                print(
+                    "This simulator will put you into a random giveaway and you get to see how likely you are going "
+                    "to win")
                 programstart = input("Type start to start: ")
                 while programstart == "start":
                     print("")
@@ -273,7 +288,9 @@ if program == "random":
                         print("")
                         print("Sorry, you didn't win")
                     print("")
-                    programstart = input("Would you like to try your chances again? Type start. Want to go back to the menu? Type back. If not, type quit: ")
+                    programstart = input(
+                        "Would you like to try your chances again? Type start. Want to go back to the menu? Type "
+                        "back. If not, type quit: ")
             elif chose == "random":
                 print("")
                 print("This category splits into 2 more categories")
@@ -315,7 +332,9 @@ if program == "random":
                         print("")
                         print("The winner of the game " + game + " is " + str(randomwinner) + " who is " + randomuser)
                         print("")
-                        programstart = input("Would you like to create another giveaway? Type create! Want to go back to the menu? Type back. If not, type quit: ")
+                        programstart = input(
+                            "Would you like to create another giveaway? Type create! Want to go back to the menu? "
+                            "Type back. If not, type quit: ")
                 elif programstart == "join":
                     print("This is an actual simulator of how it feels to join a giveaway")
                     print("")
@@ -373,7 +392,7 @@ if program == "random":
                         print("Giveaway 2: " + str(randomgamelist))
                         randomentries2 = random.randint(1, 15000)
                         print("Entries: " + str(randomentries2))
-                        print("======================")  
+                        print("======================")
                         randomgamelist = random.randint(1, 10)
                         if randomgamelist == 1:
                             randomgamelist = "Fallout 4"
@@ -430,11 +449,13 @@ if program == "random":
                             randomwinner = random.randint(1, randomentries)
                             if randomwinner == randomentry:
                                 print("")
-                                print("The winner of the giveaway was entry number " + str(randomwinner) + " who is " + username)
+                                print("The winner of the giveaway was entry number " + str(
+                                    randomwinner) + " who is " + username)
                                 print("You won " + randomgamelist + "!")
                             else:
                                 print("")
-                                print("The winner of the giveaway was entry number " + str(randomwinner) + " who is " + randomuser)
+                                print("The winner of the giveaway was entry number " + str(
+                                    randomwinner) + " who is " + randomuser)
                         elif entered == 2:
                             randomentry = random.randint(1, randomentries2)
                             print("Your entry number is: " + str(randomentry))
@@ -442,11 +463,13 @@ if program == "random":
                             randomwinner = random.randint(1, randomentries2)
                             if randomwinner == randomentry:
                                 print("")
-                                print("The winner of the giveaway was entry number " + str(randomwinner) + " who is " + username)
+                                print("The winner of the giveaway was entry number " + str(
+                                    randomwinner) + " who is " + username)
                                 print("You won " + randomgamelist + "!")
                             else:
                                 print("")
-                                print("The winner of the giveaway was entry number " + str(randomwinner) + " who is " + randomuser)
+                                print("The winner of the giveaway was entry number " + str(
+                                    randomwinner) + " who is " + randomuser)
                         elif entered == 3:
                             randomentry = random.randint(1, randomentries3)
                             print("Your entry number is: " + str(randomentry))
@@ -454,14 +477,18 @@ if program == "random":
                             randomwinner = random.randint(1, randomentries3)
                             if randomwinner == randomentry:
                                 print("")
-                                print("The winner of the giveaway was entry number " + str(randomwinner) + " who is " + username)
+                                print("The winner of the giveaway was entry number " + str(
+                                    randomwinner) + " who is " + username)
                                 print("You won " + randomgamelist + "!")
                             else:
                                 print("")
-                                print("The winner of the giveaway was entry number " + str(randomwinner) + " who is " + randomuser)
+                                print("The winner of the giveaway was entry number " + str(
+                                    randomwinner) + " who is " + randomuser)
                         print("")
-                        programstart = input("Want to join another giveaway? Type join! Want to go back to the menu? Type back. If not, type quit: ")
-                            
+                        programstart = input(
+                            "Want to join another giveaway? Type join! Want to go back to the menu? Type back. If "
+                            "not, type quit: ")
+
         elif gamechose == 6:
             print("This is a random coin flipper. This category splits into 2 others")
             programstart = input("Would you like to flip a coin or play heads or tails? (flip or game): ")
@@ -471,8 +498,8 @@ if program == "random":
                 while programstart == "flip":
                     flipchose = int(input("How many coins will be flipped? (Up to 100): "))
                     print("")
-                    if flipchose > 0 and flipchose < 101:
-                        while flipchose > 0 and flipchose < 101:
+                    if 0 < flipchose < 101:
+                        while 0 < flipchose < 101:
                             fliprand = random.randint(0, 1)
                             if fliprand == 0:
                                 print("HEADS")
@@ -480,8 +507,10 @@ if program == "random":
                                 print("TAILS")
                             flipchose -= 1
                         print("")
-                        programstart = input("Want to do it again? Type flip. Want to go back to the menu? Type back. If not, type quit: ")
-                    
+                        programstart = input(
+                            "Want to do it again? Type flip. Want to go back to the menu? Type back. If not, "
+                            "type quit: ")
+
             elif programstart == "game":
                 print("")
                 print("This is a game where you guess heads or tails")
@@ -514,13 +543,15 @@ if program == "random":
                         print("")
                         print("Error: Please try again")
                     print("")
-                    programstart = input("Type play to play again! Want to go back to the menu? Type back. Otherwise, type quit to stop: ")
+                    programstart = input(
+                        "Type play to play again! Want to go back to the menu? Type back. Otherwise, type quit to "
+                        "stop: ")
                 else:
                     print("")
                     print("Error: Quitting program")
             else:
                 print("Error: Please enter a game that is listed")
-        
+
         elif gamechose == 7:
             print("This is a game of War against the computer")
             print("I recommend you look up how to play this game if you haven't to understand the game")
@@ -555,11 +586,11 @@ if program == "random":
                     if randomcardc == 1:
                         print("Computer drew an ace! (15) ")
                         randomcardc = 15
-                    if randomcardp < 11 and randomcardp > 1:
+                    if 11 > randomcardp > 1:
                         print("You drew a " + str(randomcardp))
-                    if randomcardc < 11 and randomcardc > 1:
+                    if 11 > randomcardc > 1:
                         print("Computer drew a " + str(randomcardc))
-        # Here it checks for winner below. Sorry for the mess!
+                    # Here it checks for winner below. Sorry for the mess!
                     if randomcardp > randomcardc:
                         print("You win with a " + str(randomcardp))
                         playercards += 1
@@ -591,7 +622,7 @@ if program == "random":
                 print("WINNER: " + winner)
                 print("")
                 programstart = input("Want to play again? Type start! If not, type quit: ")
-        
+
         elif gamechose == 8:
             print("This splits into two different categories")
             what = input("Which dice rolling simulator would you like to try? (count, roll): ")
@@ -659,7 +690,9 @@ if program == "random":
                     else:
                         print("Error: Please enter a number within the range")
                     print("")
-                    programstart = input("Want to roll again? Type roll. If you want to go back to the menu, type back. If not, type quit: ")
+                    programstart = input(
+                        "Want to roll again? Type roll. If you want to go back to the menu, type back. If not, "
+                        "type quit: ")
             elif what == "count":
                 print("This simulator will roll a die or 2 until a certain number")
                 print("Once it reaches that number it will print how many rolls it took to get there")
@@ -681,7 +714,9 @@ if program == "random":
                             print("Dice total: " + str(dierantotal))
                             print("")
                         print("To get to " + str(rollto) + " it took " + str(rolls) + " rolls")
-                        programstart = input("Want to do it again? Type roll. Want to go back to the menu? Type back. If not, type quit: ")
+                        programstart = input(
+                            "Want to do it again? Type roll. Want to go back to the menu? Type back. If not, "
+                            "type quit: ")
                     if diecount == 2 and rollto < 1001:
                         dierantotal = 0
                         rolls = 0
@@ -697,13 +732,15 @@ if program == "random":
                             print("Dice total: " + str(dierantotal))
                             print("")
                         print("To get to " + str(rollto) + " it took " + str(rolls) + " rolls")
-                        programstart = input("Want to do it again? Type roll. Want to go back to the menu? Type back. If not, type quit: ")
-                        
+                        programstart = input(
+                            "Want to do it again? Type roll. Want to go back to the menu? Type back. If not, "
+                            "type quit: ")
+
         elif gamechose == 9:
             print("Sorry but this simulator is currently under construction as it is broken.")
             print("")
             programstart = input("Want to go back to the menu? Type back. If not, type quit: ")
-            
+
         elif gamechose == 1337:
             print("This random generator simulates a rock paper scissor game")
             print("There are 2 simulators: One that simulates a game, the other you play against the computer")
@@ -762,7 +799,9 @@ if program == "random":
                     elif scissors == "scissors" and paper2 == "paper":
                         print("Player one beats player two with SCISSORS ON PAPER")
                     print("")
-                    programstart = input("If you would like to play again type play. Want to go back to the menu? Type back. If not, type quit: ")
+                    programstart = input(
+                        "If you would like to play again type play. Want to go back to the menu? Type back. If not, "
+                        "type quit: ")
             elif rps == "game":
                 rock = ""
                 paper = ""
@@ -809,8 +848,9 @@ if program == "random":
                     elif move == "scissors" and rock == "rock":
                         print("Computer wins with ROCK ON SCISSORS")
                     print("")
-                    programstart = input("Want to play again? Type play. Want to go back to the menu? Type back. If not, type quit: ")
-                    
+                    programstart = input(
+                        "Want to play again? Type play. Want to go back to the menu? Type back. If not, type quit: ")
+
         elif gamechose == 10:
             print("This is a social media post simulation")
             print("Everything is randomized except for your inputs")
@@ -979,8 +1019,9 @@ if program == "random":
                 commentgenran_num = random.randint(1, 10000)
                 print("+" + str(commentgenran_num) + " others")
                 print("")
-                programstart = input("Want to post another thing? Type post. Want to go back to the menu? Type back. If not, type quit: ")
-            
+                programstart = input(
+                    "Want to post another thing? Type post. Want to go back to the menu? Type back. If not, type quit: ")
+
         elif gamechose == 11:
             print("My name is Trevor Tang. I am a 9th grader at Sammamish High School")
             print("These series of codes are programs I wrote myself")
@@ -990,7 +1031,7 @@ if program == "random":
             print("")
             print("")
             programstart = input("Want to go back to the menu? Type back. If not, type quit: ")
-            
+
         elif gamechose == 12:
             print("PATCH NOTES")
             print("=============")
@@ -1000,7 +1041,7 @@ if program == "random":
             print("V7.0  -Added pygame section")
             print("      -Added guess the color game")
             print("")
-            print("V6.1  -Fixed text bug in count simulator where after every roll, a false message would appear.") 
+            print("V6.1  -Fixed text bug in count simulator where after every roll, a false message would appear.")
             print("")
             print("V6.0  -Added a new count simulator within the dice simulator")
             print("      -Added and removed punctuation throughout the whole code")
@@ -1010,7 +1051,9 @@ if program == "random":
             print("      -If you want to roll more die, you will not be asked to how many die you would like to roll")
             print("      -Simplified the code for dice simulator")
             print("")
-            print("V5.6  -The social media simulator will not require you to keep on entering your name if you want to post again")
+            print(
+                "V5.6  -The social media simulator will not require you to keep on entering your name if you want to "
+                "post again")
             print("")
             print("V5.5  -Increased coin flip amount in flip simulator to 100")
             print("      -Added blank lines to various places in the code")
@@ -1025,10 +1068,11 @@ if program == "random":
             print("V5.1  -Added users into the giveaway simulator if you lost")
             print("      -Now you can enter a username for the giveaways")
             print("")
-            print("V5.0  -Added a new category in the giveaway simulator where you can create or join a random giveaway")
+            print(
+                "V5.0  -Added a new category in the giveaway simulator where you can create or join a random giveaway")
             print("")
             print("V4.5: -Now you can choose the min and max numbers you want in the true random number generator")
-            print("      -Updated description for lucky number simulator")     
+            print("      -Updated description for lucky number simulator")
             print("")
             print("V4.1: -Fixed bug when guessing the lucky number right, ending message failed to show")
             print("")
@@ -1052,7 +1096,7 @@ if program == "random":
             print("V1.0  -First Release out of BETA")
             print("")
             programstart = input("Want to go back to the menu? Type back. If not, type quit: ")
-            
+
         elif gamechose == 13:
             break
 elif program == "pygame":
@@ -1072,7 +1116,7 @@ elif program == "pygame":
         print("")
         gamechose = int(input("Please type the number of the simulation you would like to try: "))
         print("")
-        
+
         if gamechose == 1:
             print("This simulation will have you trying to guess the color of random hues")
             print("Make sure you answer in tuples EX: (0,0,0)")
@@ -1103,7 +1147,7 @@ elif program == "pygame":
                 print("The real color was " + str(color))
                 print("")
                 programstart = input("Type go to play again. Or back to go to the menu. Or quit to quit the program: ")
-                
+
         elif gamechose == 2:
             print("I am AwpData. I am a High School programming student.")
             print("These series of codes are programs I wrote myself")
@@ -1113,7 +1157,7 @@ elif program == "pygame":
             print("")
             print("")
             programstart = input("Want to go back to the menu? Type back. If not, type quit: ")
-        
+
         elif gamechose == 3:
             print("PATCH NOTES")
             print("=============")
@@ -1123,7 +1167,7 @@ elif program == "pygame":
             print("V7.0  -Added pygame section")
             print("      -Added guess the color game")
             print("")
-            print("V6.1  -Fixed text bug in count simulator where after every roll, a false message would appear.") 
+            print("V6.1  -Fixed text bug in count simulator where after every roll, a false message would appear.")
             print("")
             print("V6.0  -Added a new count simulator within the dice simulator")
             print("      -Added and removed punctuation throughout the whole code")
@@ -1133,7 +1177,9 @@ elif program == "pygame":
             print("      -If you want to roll more die, you will not be asked to how many die you would like to roll")
             print("      -Simplified the code for dice simulator")
             print("")
-            print("V5.6  -The social media simulator will not require you to keep on entering your name if you want to post again")
+            print(
+                "V5.6  -The social media simulator will not require you to keep on entering your name if you want to "
+                "post again")
             print("")
             print("V5.5  -Increased coin flip amount in flip simulator to 100")
             print("      -Added blank lines to various places in the code")
@@ -1148,10 +1194,11 @@ elif program == "pygame":
             print("V5.1  -Added users into the giveaway simulator if you lost")
             print("      -Now you can enter a username for the giveaways")
             print("")
-            print("V5.0  -Added a new category in the giveaway simulator where you can create or join a random giveaway")
+            print(
+                "V5.0  -Added a new category in the giveaway simulator where you can create or join a random giveaway")
             print("")
             print("V4.5: -Now you can choose the min and max numbers you want in the true random number generator")
-            print("      -Updated description for lucky number simulator")     
+            print("      -Updated description for lucky number simulator")
             print("")
             print("V4.1: -Fixed bug when guessing the lucky number right, ending message failed to show")
             print("")
@@ -1180,7 +1227,7 @@ elif program == "pygame":
             break
 print("")
 print("Quitting program...")
-print("")   
+print("")
 print("Finished")
 print("")
 print("Created by: Awpdata")
